@@ -1,0 +1,6 @@
+The purpose of this lab was to simply configure both routers with two types of passwords:
+1. Using the 'enable password' command which configures a non-encrypted password.
+- if you want to encrypt this type of password, you would use the 'service password-encryption' command
+
+2. The second type of password used in this lab was the "enable secret" which automatically encrypts the router with an encrypted password
+- When trying enter privileged exec mode, the router will override the 'enable password' and use enable secret password

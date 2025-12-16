@@ -1,0 +1,4 @@
+- In this lab, I configured all routers to use the DNS server(10.10.10.10) to resolve routers hostnames to their IP addresses
+- I verified if it worked by pinging R2 and R3 from R1 and R1 and R3 from R2
+- R1 does not have an arp entry to R3 because R3 is not directly connected to R1 and its in a different subnet,
+ arp traffic is broadcast traffic , routers don't forward broadcast traffic

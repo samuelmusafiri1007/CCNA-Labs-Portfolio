@@ -1,0 +1,12 @@
+Cisco Router and Switch Initial Configuration
+
+1. Configured Router 1 with hostname R1
+2. Configured Router 2 with the hostname R2
+3. Configured Switch 1 with hostname SW1
+4. Configured the IP address on R1 based on the topology
+5. Configured the IP address on R2 based on the topology
+6. Gave SW1 the management IP 10.10.10.10/24
+7. Gave the SW1 default gateway of 10.10.10.2
+- So the can send communicate with the default gateway 
+8. Entered interface descriptions on SW1
+9. Configured full duplex and speed 100 on all interfaces 
