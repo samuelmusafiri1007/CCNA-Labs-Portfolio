@@ -1,0 +1,113 @@
+R5#
+R5#sh run
+Building configuration...
+
+Current configuration : 1260 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R5
+!
+!
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017U6C5-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 192.168.0.5 255.255.255.255
+!
+interface FastEthernet0/0
+ ip address 10.1.3.2 255.255.255.0
+ ip ospf cost 1500
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1
+ ip address 10.0.3.2 255.255.255.0
+ ip ospf cost 1500
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/0
+ ip address 172.16.0.5 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface FastEthernet1/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ area 0 range 10.1.0.0 255.255.0.0
+ area 1 range 10.0.0.0 255.255.0.0
+ auto-cost reference-bandwidth 100000
+ network 192.168.0.0 0.0.0.255 area 0
+ network 10.1.3.0 0.0.0.255 area 0
+ network 10.0.3.0 0.0.0.255 area 1
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 30 0
+ logging synchronous
+ privilege level 15
+!
+line aux 0
+ exec-timeout 0 0
+ logging synchronous
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+R5#  
